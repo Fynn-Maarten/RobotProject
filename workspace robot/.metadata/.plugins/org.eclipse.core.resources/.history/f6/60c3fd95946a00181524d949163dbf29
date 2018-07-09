@@ -1,0 +1,43 @@
+package de.fynn.training.controlled;
+
+import java.time.LocalTime;
+import java.util.Scanner;
+
+public class Timer {
+	
+	public static Scanner scan = new Scanner(System.in);
+	public static String seconds = " Sekunden";
+	public static String second = " Sekunde";
+	public static String minutes =  " Minuten";
+	public static String minute = " Minute";
+	public static String hours = " Stunden";
+	public static String hour = " Stunde";
+	
+
+	
+	Calendar c = new
+
+	
+	public static void alarm(String t) {
+   Thread th = new Thread(){
+			
+			public void run(){
+				
+				int wl = 0;
+				while(wl==0){
+					if(t.equals(LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":" + LocalTime.now().getSecond())){
+						System.out.println("test");
+						break;
+					}
+				}
+			}
+		};
+		th.start();
+	}
+	public static void stopTimer(){
+		
+	}
+
+		
+	}
+

@@ -1,0 +1,25 @@
+package de.fynn.training.controlled;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+
+public class PlaySound extends Thread{
+
+	static int var = 0;
+	public void run() {
+		String path = "E:\\RobotProject\\Music\\unknown - Harry Potter Soundtrack for Studying Sleeping Rela.mp3";// find sound on yt which is like kinda loud ...
+		try {
+			FileInputStream fis = new FileInputStream(path);
+			Player pl = new Player(fis);
+			pl.play();
+		}catch(JavaLayerException jle) {
+			jle.printStackTrace();
+		}catch(FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		}
+		
+	}
+}

@@ -1,0 +1,24 @@
+package de.fynn.training.controlled;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+
+public class TimerSound {
+
+	public static void sound() {
+		String path = "lol";
+		try {
+			FileInputStream fis = new FileInputStream(path);
+			Player pl = new Player(fis);
+			pl.play();
+		}catch(JavaLayerException jle) {
+			jle.printStackTrace();
+		}catch(FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		}
+		
+	}
+}
